@@ -3,7 +3,9 @@ import { useEffect, useState } from "react";
 import { ArrowDown, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-overworld.jpg";
 import { EVENT, STATS } from "@/lib/hackathon-data";
+import { useIsMobile } from "@/hooks/use-mobile";
 import { PixelButton } from "./primitives";
+
 
 const TARGET = new Date("2027-03-13T09:00:00+05:30").getTime();
 
