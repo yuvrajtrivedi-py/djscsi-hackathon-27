@@ -1,10 +1,10 @@
 export const EVENT = {
   name: "BLOCKSTORM",
-  edition: "'26",
+  edition: "'27",
   tagline: "Craft. Break. Build. Repeat.",
   blurb:
     "A 24-hour college hackathon where every idea starts as a single block. Spawn in with an empty inventory, mine your way through the night, and ship something worth putting on the map.",
-  dates: "14 - 15 March 2026",
+  dates: "13 - 14 March 2027",
   duration: "24 hours, non-stop",
   venue: "DJ Sanghvi College of Engineering, Mumbai",
   prizePool: "₹1,50,000",

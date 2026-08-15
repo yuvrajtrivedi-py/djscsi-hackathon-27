@@ -468,7 +468,7 @@ export function Footer() {
       </div>
       <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-border px-5 pt-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
         <p className="font-pixel text-lg text-muted-foreground">
-          © 2026 {EVENT.name}{EVENT.edition} · All blocks reserved
+          © 2027 {EVENT.name}{EVENT.edition} · All blocks reserved
         </p>
         <p className="font-pixel text-lg text-muted-foreground">Mumbai · {EVENT.dates}</p>
       </div>

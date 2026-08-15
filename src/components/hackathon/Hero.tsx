@@ -5,7 +5,7 @@ import heroImage from "@/assets/hero-overworld.jpg";
 import { EVENT, STATS } from "@/lib/hackathon-data";
 import { PixelButton } from "./primitives";
 
-const TARGET = new Date("2026-03-14T09:00:00+05:30").getTime();
+const TARGET = new Date("2027-03-13T09:00:00+05:30").getTime();
 
 function useCountdown() {
   const [left, setLeft] = useState<number | null>(null);
@@ -74,7 +74,7 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="text-pixel-shadow text-4xl leading-[1.1] sm:text-6xl lg:text-7xl">
+          <h1 className="text-pixel-shadow text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
             {EVENT.name.split("").map((ch, i) => (
               <motion.span
                 key={`${ch}-${i}`}
