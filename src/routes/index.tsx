@@ -2,6 +2,8 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Nav } from "@/components/hackathon/Nav";
 import { Hero } from "@/components/hackathon/Hero";
 import { WorldLoader } from "@/components/hackathon/Loader";
+import { WorldBackdrop } from "@/components/hackathon/WorldBackdrop";
+
 import {
   About,
   FinalCta,
@@ -40,10 +42,11 @@ function Index() {
   return (
     <>
       <WorldLoader />
+      <WorldBackdrop />
       <Nav />
       <main>
-        
         <Hero />
+
         <About />
         <Tracks />
         <Prizes />

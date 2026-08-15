@@ -84,6 +84,7 @@ export function Tracks() {
   return (
     <section id="tracks" className="relative border-t-3 border-t-border py-24 sm:py-32">
       <div className="grid-blocks absolute inset-0 opacity-50" aria-hidden />
+      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ender/10 to-transparent" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 02 · Understand"
@@ -128,9 +129,10 @@ export function Prizes() {
         loading="lazy"
         width={1920}
         height={1088}
-        className="absolute inset-0 h-full w-full object-cover opacity-25"
+        className="absolute inset-0 h-full w-full object-cover opacity-20 sm:opacity-30"
       />
-      <div className="absolute inset-0 bg-background/70" aria-hidden />
+      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="vignette absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 03 · Get excited"
@@ -381,9 +383,10 @@ export function FinalCta() {
         loading="lazy"
         width={1920}
         height={1088}
-        className="absolute inset-0 h-full w-full object-cover opacity-30"
+        className="absolute inset-0 h-full w-full object-cover opacity-20 sm:opacity-35"
       />
-      <div className="absolute inset-0 bg-background/70" aria-hidden />
+      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="vignette absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
         <Reveal>
           <p className="font-pixel text-xl uppercase tracking-[0.3em] text-grass">
