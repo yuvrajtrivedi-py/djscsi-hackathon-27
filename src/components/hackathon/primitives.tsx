@@ -47,7 +47,7 @@ export function Reveal({
       ref={ref as never}
       className={className}
       initial={{ opacity: 0, y: 28, scale: 0.98 }}
-      animate={inView ? { opacity: 1, y: 0, scale: 1 } : undefined}
+      animate={inView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 28, scale: 0.98 }}
       transition={{ duration: 0.6, delay, ease: [0.16, 1, 0.3, 1] }}
     >
       {children}
