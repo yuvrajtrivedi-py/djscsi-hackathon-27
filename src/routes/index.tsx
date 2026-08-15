@@ -42,7 +42,7 @@ function Index() {
       <WorldLoader />
       <Nav />
       <main>
-        <h1 className="sr-only">BLOCKSTORM '26 — 24-hour Minecraft-themed hackathon by DJCSI</h1>
+        
         <Hero />
         <About />
         <Tracks />
