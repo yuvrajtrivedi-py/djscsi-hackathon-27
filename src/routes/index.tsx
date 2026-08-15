@@ -40,10 +40,11 @@ function Index() {
   return (
     <>
       <WorldLoader />
+      <WorldBackdrop />
       <Nav />
       <main>
-        
         <Hero />
+
         <About />
         <Tracks />
         <Prizes />
