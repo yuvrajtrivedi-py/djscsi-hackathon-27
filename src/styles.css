@@ -167,12 +167,46 @@
   background-image:
     linear-gradient(to right, oklch(1 0 0 / 0.035) 1px, transparent 1px),
     linear-gradient(to bottom, oklch(1 0 0 / 0.035) 1px, transparent 1px);
-  background-size: 32px 32px;
+  background-size: 20px 20px;
+}
+
+@media (min-width: 640px) {
+  .grid-blocks {
+    background-size: 32px 32px;
+  }
+}
+
+/* Layered voxel-world atmosphere used behind the whole page. */
+@utility world-backdrop {
+  background-color: var(--background);
+  background-image:
+    radial-gradient(115% 70% at 50% -10%, oklch(0.65 0.2 305 / 0.22) 0%, transparent 60%),
+    radial-gradient(80% 55% at 8% 22%, oklch(0.83 0.13 195 / 0.14) 0%, transparent 65%),
+    radial-gradient(85% 60% at 92% 78%, oklch(0.7 0.19 44 / 0.14) 0%, transparent 68%),
+    linear-gradient(180deg, oklch(0.19 0.03 275) 0%, var(--background) 45%, oklch(0.13 0.015 264) 100%);
+}
+
+/* Pixel "stars"/ore specks; kept subtle so text contrast is untouched. */
+@utility starfield {
+  background-image:
+    radial-gradient(oklch(1 0 0 / 0.5) 1px, transparent 1px),
+    radial-gradient(oklch(0.83 0.13 195 / 0.4) 1px, transparent 1px);
+  background-size:
+    120px 120px,
+    200px 200px;
+  background-position:
+    0 0,
+    60px 90px;
+}
+
+@utility vignette {
+  background-image: radial-gradient(120% 90% at 50% 40%, transparent 45%, oklch(0.1 0.01 264 / 0.7) 100%);
 }
 
 @utility pixelated {
   image-rendering: pixelated;
 }
+
 
 /* --- Keyframes --- */
 
