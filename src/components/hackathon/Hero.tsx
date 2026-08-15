@@ -81,7 +81,7 @@ export function Hero() {
             </span>
           </motion.div>
 
-          <h1 className="text-pixel-shadow text-4xl leading-[1.1] sm:text-5xl lg:text-6xl">
+          <h1 className="text-pixel-shadow text-[1.75rem] leading-[1.15] break-words sm:text-5xl lg:text-6xl">
             {EVENT.name.split("").map((ch, i) => (
               <motion.span
                 key={`${ch}-${i}`}
