@@ -26,25 +26,30 @@ function useCountdown() {
 }
 
 export function Hero() {
+  const isMobile = useIsMobile();
   const { scrollY } = useScroll();
-  const bgY = useTransform(scrollY, [0, 800], [0, 160]);
-  const contentY = useTransform(scrollY, [0, 600], [0, 80]);
-  const fade = useTransform(scrollY, [0, 520], [1, 0]);
+  const bgY = useTransform(scrollY, [0, 800], [0, isMobile ? 0 : 160]);
+  const contentY = useTransform(scrollY, [0, 600], [0, isMobile ? 0 : 80]);
+  const fade = useTransform(scrollY, [0, 520], [1, isMobile ? 0.6 : 0]);
   const countdown = useCountdown();
 
   return (
-    <section id="top" className="relative flex min-h-[100svh] flex-col justify-center overflow-hidden pt-24">
+    <section id="top" className="relative flex min-h-dvh flex-col justify-center overflow-hidden pt-24">
       <motion.div className="absolute inset-0 -z-20" style={{ y: bgY }} aria-hidden>
         <img
           src={heroImage}
           alt=""
           width={1920}
           height={1088}
-          className="h-[115%] w-full object-cover"
+          fetchPriority="high"
+          className="h-[115%] w-full object-cover object-center"
         />
       </motion.div>
+      {/* Contrast layers: stronger on small screens where text overlaps the art. */}
+      <div className="absolute inset-0 -z-10 bg-background/45 sm:bg-background/25" aria-hidden />
       <div className="scrim absolute inset-0 -z-10" aria-hidden />
       <div className="grid-blocks absolute inset-0 -z-10 opacity-70" aria-hidden />
+
 
       {/* Floating blocks */}
       <span
