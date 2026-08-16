@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import caveImage from "@/assets/cave-band.jpg";
 import nightImage from "@/assets/night-sky.jpg";
+import heroImage from "@/assets/hero-overworld.jpg";
 import {
   EVENT,
   FAQS,
@@ -21,6 +22,34 @@ import {
 } from "@/lib/hackathon-data";
 import { BlockPanel, PixelButton, Reveal, SectionHeading, oreBg, oreText } from "./primitives";
 import { Clock, Gem, MapPin, ShieldCheck, Trophy, Users } from "lucide-react";
+
+/* ---------------- Shared section background ---------------- */
+
+function SectionBg({
+  image,
+  flip = false,
+}: {
+  image: string;
+  flip?: boolean;
+}) {
+  return (
+    <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden>
+      <img
+        src={image}
+        alt=""
+        loading="lazy"
+        width={1920}
+        height={1088}
+        className={`absolute inset-0 h-full w-full object-cover opacity-20 sm:opacity-35 ${
+          flip ? "scale-x-[-1]" : ""
+        }`}
+      />
+      <div className="absolute inset-0 bg-background/85 sm:bg-background/75" />
+      <div className="grid-blocks absolute inset-0 opacity-40" />
+      <div className="vignette absolute inset-0" />
+    </div>
+  );
+}
 
 /* ---------------- About ---------------- */
 
@@ -75,9 +104,9 @@ export function About() {
 
 export function Tracks() {
   return (
-    <section id="tracks" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="grid-blocks absolute inset-0 opacity-50" aria-hidden />
-      <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ender/10 to-transparent" aria-hidden />
+    <section id="tracks" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      <SectionBg image={heroImage} flip />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ender/10 to-transparent" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 02 · Understand"
@@ -169,8 +198,9 @@ export function Timeline() {
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
 
   return (
-    <section id="timeline" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="mx-auto max-w-4xl px-5 sm:px-8">
+    <section id="timeline" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      <SectionBg image={caveImage} flip />
+      <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 04 · The run"
           title="24 hours, block by block"
@@ -221,8 +251,9 @@ function initials(name: string) {
 
 export function Judges() {
   return (
-    <section id="judges" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="judges" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      <SectionBg image={nightImage} />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 05 · The panel"
           title="Judges who ship, mentors who debug"
@@ -301,8 +332,9 @@ function SponsorTier({ tier, names, ore }: { tier: string; names: string[]; ore:
 
 export function Sponsors() {
   return (
-    <section id="sponsors" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="sponsors" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      <SectionBg image={heroImage} />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Backed by"
           title="Sponsors funding the build"
@@ -322,8 +354,9 @@ export function Sponsors() {
 
 export function RulesAndFaq() {
   return (
-    <section id="faq" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
+    <section id="faq" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      <SectionBg image={caveImage} flip />
+      <div className="relative mx-auto grid max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading eyebrow="Server rules" title="Eligibility & rules" ore="redstone" />
           <ul className="mt-10 space-y-4">
