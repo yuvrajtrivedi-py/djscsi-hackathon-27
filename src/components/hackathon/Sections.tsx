@@ -8,7 +8,11 @@ import {
 } from "@/components/ui/accordion";
 import caveImage from "@/assets/cave-band.jpg";
 import nightImage from "@/assets/night-sky.jpg";
-import heroImage from "@/assets/hero-overworld.jpg";
+import forestImage from "@/assets/bg-forest.jpg";
+import netherImage from "@/assets/bg-nether.jpg";
+import endImage from "@/assets/bg-end.jpg";
+import snowImage from "@/assets/bg-snow.jpg";
+import villageImage from "@/assets/bg-village.jpg";
 import {
   EVENT,
   FAQS,
@@ -40,12 +44,12 @@ function SectionBg({
         loading="lazy"
         width={1920}
         height={1088}
-        className={`absolute inset-0 h-full w-full object-cover opacity-20 sm:opacity-35 ${
+        className={`absolute inset-0 h-full w-full object-cover opacity-55 sm:opacity-70 ${
           flip ? "scale-x-[-1]" : ""
         }`}
       />
-      <div className="absolute inset-0 bg-background/85 sm:bg-background/75" />
-      <div className="grid-blocks absolute inset-0 opacity-40" />
+      <div className="absolute inset-0 bg-background/55 sm:bg-background/45" />
+      <div className="grid-blocks absolute inset-0 opacity-25" />
       <div className="vignette absolute inset-0" />
     </div>
   );
@@ -64,9 +68,9 @@ export function About() {
         loading="lazy"
         width={1920}
         height={1088}
-        className="absolute inset-0 h-full w-full object-cover opacity-30 sm:opacity-45"
+        className="absolute inset-0 h-full w-full object-cover opacity-55 sm:opacity-70"
       />
-      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="absolute inset-0 bg-background/55 sm:bg-background/45" aria-hidden />
       <div className="vignette absolute inset-0" aria-hidden />
 
       <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
@@ -105,7 +109,7 @@ export function About() {
 export function Tracks() {
   return (
     <section id="tracks" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
-      <SectionBg image={heroImage} flip />
+      <SectionBg image={forestImage} />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-ender/10 to-transparent" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
@@ -153,7 +157,7 @@ export function Prizes() {
         height={1088}
         className="absolute inset-0 h-full w-full object-cover opacity-20 sm:opacity-30"
       />
-      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="absolute inset-0 bg-background/55 sm:bg-background/45" aria-hidden />
       <div className="vignette absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
@@ -199,7 +203,7 @@ export function Timeline() {
 
   return (
     <section id="timeline" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
-      <SectionBg image={caveImage} flip />
+      <SectionBg image={netherImage} />
       <div className="relative mx-auto max-w-4xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 04 · The run"
@@ -252,7 +256,7 @@ function initials(name: string) {
 export function Judges() {
   return (
     <section id="judges" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
-      <SectionBg image={nightImage} />
+      <SectionBg image={endImage} />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Chapter 05 · The panel"
@@ -333,7 +337,7 @@ function SponsorTier({ tier, names, ore }: { tier: string; names: string[]; ore:
 export function Sponsors() {
   return (
     <section id="sponsors" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
-      <SectionBg image={heroImage} />
+      <SectionBg image={snowImage} />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">
         <SectionHeading
           eyebrow="Backed by"
@@ -355,7 +359,7 @@ export function Sponsors() {
 export function RulesAndFaq() {
   return (
     <section id="faq" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
-      <SectionBg image={caveImage} flip />
+      <SectionBg image={villageImage} />
       <div className="relative mx-auto grid max-w-7xl gap-16 px-5 sm:px-8 lg:grid-cols-2 lg:gap-20">
         <div>
           <SectionHeading eyebrow="Server rules" title="Eligibility & rules" ore="redstone" />
@@ -411,7 +415,7 @@ export function FinalCta() {
         height={1088}
         className="absolute inset-0 h-full w-full object-cover opacity-20 sm:opacity-35"
       />
-      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="absolute inset-0 bg-background/55 sm:bg-background/45" aria-hidden />
       <div className="vignette absolute inset-0" aria-hidden />
       <div className="relative mx-auto max-w-3xl px-5 text-center sm:px-8">
         <Reveal>
