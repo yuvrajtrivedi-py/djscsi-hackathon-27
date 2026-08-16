@@ -13,6 +13,7 @@ import netherImage from "@/assets/bg-nether.jpg";
 import endImage from "@/assets/bg-end.jpg";
 import snowImage from "@/assets/bg-snow.jpg";
 import villageImage from "@/assets/bg-village.jpg";
+import treasureImage from "@/assets/bg-treasure.jpg";
 import {
   EVENT,
   FAQS,
@@ -149,7 +150,7 @@ export function Prizes() {
   return (
     <section id="prizes" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
       <img
-        src={nightImage}
+        src={treasureImage}
         alt=""
         aria-hidden
         loading="lazy"
