@@ -26,8 +26,21 @@ import { Clock, Gem, MapPin, ShieldCheck, Trophy, Users } from "lucide-react";
 
 export function About() {
   return (
-    <section id="about" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
+    <section id="about" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      {/* Cave image as full section background */}
+      <img
+        src={caveImage}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        width={1920}
+        height={1088}
+        className="absolute inset-0 h-full w-full object-cover opacity-30 sm:opacity-40"
+      />
+      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="vignette absolute inset-0" aria-hidden />
+
+      <div className="relative mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
         <div>
           <SectionHeading
             eyebrow="Chapter 01 · Discover"
@@ -42,7 +55,7 @@ export function About() {
               { icon: Users, label: EVENT.seats, sub: "Teams of 2 to 4" },
             ].map((item, i) => (
               <Reveal key={item.label} delay={i * 0.07}>
-                <div className="block-frame flex items-start gap-4 bg-card p-5">
+                <div className="block-frame flex items-start gap-4 bg-card/90 p-5 backdrop-blur-sm">
                   <span className="block-face grid size-10 shrink-0 place-items-center bg-secondary">
                     <item.icon className="size-5 text-grass" aria-hidden />
                   </span>
@@ -57,7 +70,7 @@ export function About() {
         </div>
 
         <Reveal delay={0.1} className="relative">
-          <div className="block-frame relative overflow-hidden bg-card">
+          <div className="block-frame relative overflow-hidden bg-card/90 backdrop-blur-sm">
             <img
               src={caveImage}
               alt="Blocky voxel cave lit by torches, glowing ore and lava"
@@ -67,10 +80,6 @@ export function About() {
               className="h-72 w-full object-cover sm:h-full sm:max-h-[520px]"
             />
             <div className="absolute inset-0 bg-background/25" aria-hidden />
-          </div>
-          <div className="block-frame block-face absolute -bottom-6 -left-4 bg-gold p-5 text-accent-foreground sm:-left-8">
-            <div className="font-pixel text-lg uppercase tracking-widest">Theme</div>
-            <div className="font-display mt-2 text-sm">MINECRAFT</div>
           </div>
         </Reveal>
       </div>
