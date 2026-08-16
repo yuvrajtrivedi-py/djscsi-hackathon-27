@@ -26,53 +26,46 @@ import { Clock, Gem, MapPin, ShieldCheck, Trophy, Users } from "lucide-react";
 
 export function About() {
   return (
-    <section id="about" className="relative border-t-3 border-t-border py-24 sm:py-32">
-      <div className="mx-auto grid max-w-7xl gap-14 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:gap-20">
-        <div>
-          <SectionHeading
-            eyebrow="Chapter 01 · Discover"
-            title="One night. One world. Everything you build stays on the map."
-            lead="BLOCKSTORM is DJCSI's 24-hour build marathon, themed end to end around the game that taught a generation that anything can be made out of small parts. You arrive with an idea and an empty inventory. You leave with something that runs."
-          />
-          <div className="mt-10 grid gap-4 sm:grid-cols-2">
-            {[
-              { icon: Clock, label: EVENT.duration, sub: EVENT.dates },
-              { icon: MapPin, label: "On campus", sub: EVENT.venue },
-              { icon: Trophy, label: `${EVENT.prizePool} prize pool`, sub: "Across 4 tracks + bounties" },
-              { icon: Users, label: EVENT.seats, sub: "Teams of 2 to 4" },
-            ].map((item, i) => (
-              <Reveal key={item.label} delay={i * 0.07}>
-                <div className="block-frame flex items-start gap-4 bg-card p-5">
-                  <span className="block-face grid size-10 shrink-0 place-items-center bg-secondary">
-                    <item.icon className="size-5 text-grass" aria-hidden />
-                  </span>
-                  <div>
-                    <div className="text-sm font-semibold">{item.label}</div>
-                    <div className="font-pixel text-lg text-muted-foreground">{item.sub}</div>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </div>
+    <section id="about" className="relative overflow-hidden border-t-3 border-t-border py-24 sm:py-32">
+      {/* Cave image as full section background */}
+      <img
+        src={caveImage}
+        alt=""
+        aria-hidden
+        loading="lazy"
+        width={1920}
+        height={1088}
+        className="absolute inset-0 h-full w-full object-cover opacity-30 sm:opacity-45"
+      />
+      <div className="absolute inset-0 bg-background/80 sm:bg-background/70" aria-hidden />
+      <div className="vignette absolute inset-0" aria-hidden />
 
-        <Reveal delay={0.1} className="relative">
-          <div className="block-frame relative overflow-hidden bg-card">
-            <img
-              src={caveImage}
-              alt="Blocky voxel cave lit by torches, glowing ore and lava"
-              loading="lazy"
-              width={1920}
-              height={1088}
-              className="h-72 w-full object-cover sm:h-full sm:max-h-[520px]"
-            />
-            <div className="absolute inset-0 bg-background/25" aria-hidden />
-          </div>
-          <div className="block-frame block-face absolute -bottom-6 -left-4 bg-gold p-5 text-accent-foreground sm:-left-8">
-            <div className="font-pixel text-lg uppercase tracking-widest">Theme</div>
-            <div className="font-display mt-2 text-sm">MINECRAFT</div>
-          </div>
-        </Reveal>
+      <div className="relative mx-auto max-w-5xl px-5 sm:px-8">
+        <SectionHeading
+          eyebrow="Chapter 01 · Discover"
+          title="One night. One world. Everything you build stays on the map."
+          lead="BLOCKSTORM is DJCSI's 24-hour build marathon, themed end to end around the game that taught a generation that anything can be made out of small parts. You arrive with an idea and an empty inventory. You leave with something that runs."
+        />
+        <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { icon: Clock, label: EVENT.duration, sub: EVENT.dates },
+            { icon: MapPin, label: "On campus", sub: EVENT.venue },
+            { icon: Trophy, label: `${EVENT.prizePool} prize pool`, sub: "Across 4 tracks + bounties" },
+            { icon: Users, label: EVENT.seats, sub: "Teams of 2 to 4" },
+          ].map((item, i) => (
+            <Reveal key={item.label} delay={i * 0.07}>
+              <div className="block-frame flex h-full items-start gap-4 bg-card/90 p-5 backdrop-blur-sm">
+                <span className="block-face grid size-10 shrink-0 place-items-center bg-secondary">
+                  <item.icon className="size-5 text-grass" aria-hidden />
+                </span>
+                <div>
+                  <div className="text-sm font-semibold">{item.label}</div>
+                  <div className="font-pixel text-lg text-muted-foreground">{item.sub}</div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
       </div>
     </section>
   );
