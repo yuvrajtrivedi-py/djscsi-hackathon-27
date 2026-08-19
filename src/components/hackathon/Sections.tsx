@@ -484,10 +484,11 @@ export function Footer() {
               ))}
             </ul>
           </div>
+          {/*}
            <div>
             <h3 className="font-pixel text-lg uppercase tracking-widest text-muted-foreground">
               Connect
-            </h3>
+            </h3>          
             <ul className="mt-4 space-y-2 text-sm">
               {["Discord", "Instagram", "GitHub", "Contact"].map((l) => (
                 <li key={l}>
@@ -497,7 +498,7 @@ export function Footer() {
                 </li>
               ))
             </ul>
-          </div> 
+          </div> */}
         </nav>
       </div>
       <div className="mx-auto mt-12 flex max-w-7xl flex-col gap-3 border-t border-border px-5 pt-6 sm:flex-row sm:items-center sm:justify-between sm:px-8">
